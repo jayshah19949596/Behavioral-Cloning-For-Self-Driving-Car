@@ -96,7 +96,7 @@ def perform_data_augmentation(images, measurements):
 
 def pre_process_image(img):
 	"""
-    Method for preprocessing images: this method is the same used in drive.py, except this version uses
+    Method for pre-processing images: this method is the same used in drive.py, except this version uses
     BGR to YUV and drive.py uses RGB to YUV (due to using cv2 to read the image here, where drive.py images are
     received in RGB)
     """

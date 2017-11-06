@@ -71,10 +71,10 @@ You can refer the paper published by NIVIDIA :  [End to End Learning for Self-Dr
 
 ## Correction Factor
 
-- Corection factor used in the below cell is 0.2
+- Correction factor used in the below cell is 0.2
 - It is a parameter to tune
 - For right camera images and left camera images the angel measurement is of center camera image which is wrong
-- Corection factor helps us use the right camera images and left camers images effectively
+- Correction factor helps us use the right camera images and left camera images effectively
 - Correction factor makes the angel measurement to stir right by 0.2 for left images so that we can effectively use left images
 - Correction factor makes the angel measurement to stir left by 0.2 for right images so that we can effectively use right images
 
@@ -84,7 +84,7 @@ You can refer the paper published by NIVIDIA :  [End to End Learning for Self-Dr
 - Somehow my model even after collecting the data was not performing good
 - The model did drive with in the track but when ever there was a turn, it did not change the stirring angle
 - I saw the csv file and found that most of the stirring angel data is 0 degree
-- This is because the training trach does not have much sharp turns
+- This is because the training track does not have much sharp turns
 - Because of this somehow I felt that the training is biased
 - We have told the network for most of the data to keep strring angel to 0
 - Because of this I think my model was more inclined to go straight even when there was a turn 
