@@ -116,7 +116,7 @@ You can refer the paper published by NIVIDIA :  [End to End Learning for Self-Dr
 
 ## Final Output
 
-[image04]: ./writeup_images/FinalOp.PNG "Final_op"
+[image04]: ./writeup_images/FinalOP.PNG "Final_op"
 ![Final_op][image04]
 
 
