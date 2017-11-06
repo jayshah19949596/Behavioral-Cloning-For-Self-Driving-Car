@@ -82,8 +82,8 @@ You can refer the paper published by NIVIDIA :  [End to End Learning for Self-Dr
 
 - This was a game changer for me 
 - Somehow my model even after collecting the data was not performing good
-- The model did drive with in the track but when ever there was a turn, it did not change the stirring angle
-- I saw the csv file and found that most of the stirring angel data is 0 degree
+- The model did drive with in the track but when ever there was a turn, it did not change the steering angle
+- I saw the csv file and found that most of the steering angel data is 0 degree
 - This is because the training track does not have much sharp turns
 - Because of this somehow I felt that the training is biased
 - We have told the network for most of the data to keep strring angel to 0
@@ -92,16 +92,16 @@ You can refer the paper published by NIVIDIA :  [End to End Learning for Self-Dr
 - My approach and code for the below cell is heavily inspired by https://github.com/jeremy-shannon/CarND-Behavioral-Cloning-Project
 - I decided to throw away some of the data looking at above link's solution
 - Calculated **`avg_samples_per_bin`** 
-- all the stirring angle data for a particular bin that had number of data < **`avg_samples_per_bin`** were kept
+- all the steering angle data for a particular bin that had number of data < **`avg_samples_per_bin`** were kept
 - The bins that had data more then **`avg_samples_per_bin`** were kept with a **`1-keep_probability`**
 - Somehow with this solution the model performed good but got confused at the bridge
 - So no data from data_3 folder or data_4 folder was thrown away because those folder had training data for bridge
 
-### Data Distribution of stirring angles before Flattening is shown below
+### Data Distribution of steering angles before Flattening is shown below
 [image02]: ./writeup_images/Before_Flattening.PNG "Before_Flattening"
 ![Before_Flattening][image02]
 
-### Data Distribution of stirring angles after Flattening is shown below
+### Data Distribution of steering angles after Flattening is shown below
 [image03]: ./writeup_images/After_Flattening.PNG "After_Flattening"
 ![After_Flattening][image03]
 
