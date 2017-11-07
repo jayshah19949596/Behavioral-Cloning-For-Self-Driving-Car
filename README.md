@@ -71,7 +71,7 @@ You can refer the paper published by NIVIDIA :  [End to End Learning for Self-Dr
 
 ## Correction Factor
 
-- Correction factor used in the below cell is 0.2
+- Correction factor used is 0.2
 - It is a parameter to tune
 - For right camera images and left camera images the angel measurement is of center camera image which is wrong
 - Correction factor helps us use the right camera images and left camera images effectively
@@ -89,7 +89,7 @@ You can refer the paper published by NIVIDIA :  [End to End Learning for Self-Dr
 - We have told the network for most of the data to keep strring angel to 0
 - Because of this I think my model was more inclined to go straight even when there was a turn 
 - I started for looking for solutions online
-- My approach and code for the below cell is heavily inspired by https://github.com/jeremy-shannon/CarND-Behavioral-Cloning-Project
+- My approach and code is heavily inspired by https://github.com/jeremy-shannon/CarND-Behavioral-Cloning-Project
 - I decided to throw away some of the data looking at above link's solution
 - Calculated **`avg_samples_per_bin`** 
 - all the steering angle data for a particular bin that had number of data < **`avg_samples_per_bin`** were kept
@@ -125,7 +125,7 @@ You can refer the paper published by NIVIDIA :  [End to End Learning for Self-Dr
 - Instead of storing the preprocessed data in memory all at once, using a generator you can pull pieces of the data and process them on the fly only when you need them.
 - This is much more memory-efficient.
 - To return generator instead of using **`rerturn`** keyword we use **`yield`** keyword
-- **`yield`** keyword is at line 34 of below cell
+- **`yield`** keyword is at line 34 of first code cell
 - Keras has inbuilt function **`fit_generator`**:
    * fit_generator(self, generator, steps_per_epoch, epochs=1, verbose=1, callbacks=None, validation_data=None, validation_steps=None, class_weight=None, max_queue_size=10, workers=1, use_multiprocessing=False, shuffle=True, initial_epoch=0)
    
