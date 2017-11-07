@@ -75,8 +75,8 @@ You can refer the paper published by NIVIDIA :  [End to End Learning for Self-Dr
 - It is a parameter to tune
 - For right camera images and left camera images the angel measurement is of center camera image which is wrong
 - Correction factor helps us use the right camera images and left camera images effectively
-- Correction factor makes the angel measurement to stir right by 0.2 for left images so that we can effectively use left images
-- Correction factor makes the angel measurement to stir left by 0.2 for right images so that we can effectively use right images
+- Correction factor makes the angel measurement to steer right by 0.2 for left images so that we can effectively use left images
+- Correction factor makes the angel measurement to steer left by 0.2 for right images so that we can effectively use right images
 
 ## Flatten the Distribution
 
@@ -113,6 +113,42 @@ You can refer the paper published by NIVIDIA :  [End to End Learning for Self-Dr
 - This helped in increasing the amount of data 
 - It also helps in model to generalize on the training track 
 - This Project made one thing clear that if you have data than only your model can shine and achieve the goal
+
+
+## GENERATORS
+
+- The images captured in the car simulator are much larger than the images encountered in the Traffic Sign Classifier Project, a size of 160 x 320 x 3 
+- 10,000 simulator images would take over 1.5 GB
+- That's a lot of memory
+- preprocessing data can change data types from an `int` to a `float`, which can increase the size of the data by a factor of 4.
+- Generators can be a great way to work with large amounts of data.
+- Instead of storing the preprocessed data in memory all at once, using a generator you can pull pieces of the data and process them on the fly only when you need them.
+- This is much more memory-efficient.
+- To return generator instead of using **`rerturn`** keyword we use **`yield`** keyword
+- **`yield`** keyword is at line 34 of below cell
+- Keras has inbuilt function **`fit_generator`**:
+   * fit_generator(self, generator, steps_per_epoch, epochs=1, verbose=1, callbacks=None, validation_data=None, validation_steps=None, class_weight=None, max_queue_size=10, workers=1, use_multiprocessing=False, shuffle=True, initial_epoch=0)
+   
+   
+- Arguments:
+   * generator: A generator or an instance of Sequence (keras.utils.Sequence) object in order to avoid duplicate data when using multiprocessing.
+   * steps_per_epoch: Total number of steps (batches of samples) to yield from generator before declaring one epoch finished and starting the next epoch
+   * epochs: Integer, total number of iterations on the data.
+   * verbose: Verbosity mode, 0, 1, or 2.
+   * callbacks: List of callbacks to be called during training.
+   * validation_data: This can be either a generator for the validation data or tuple (inputs, targets) or a tuple (inputs, targets, sample_weights)
+   * validation_steps: Only relevant if `validation_data` is a generator
+   * class_weight: Dictionary mapping class indices to a weight for the class.
+   * max_queue_size: Maximum size for the generator queue
+   * workers: Maximum number of processes to spin up when using process based t
+   * use_multiprocessing: If True, use process based threading
+   * shuffle: Whether to shuffle the order of the batches at the beginning of each epoch
+   * initial_epoch: Epoch at which to start training
+   
+   
+- Return :
+    * A History object.
+
 
 ## Final Output
 
