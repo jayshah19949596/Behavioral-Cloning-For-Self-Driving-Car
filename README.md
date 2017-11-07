@@ -86,7 +86,7 @@ You can refer the paper published by NIVIDIA :  [End to End Learning for Self-Dr
 - I saw the csv file and found that most of the steering angel data is 0 degree
 - This is because the training track does not have much sharp turns
 - Because of this somehow I felt that the training is biased
-- We have told the network for most of the data to keep strring angel to 0
+- We have told the network for most of the data to keep steering angel to 0
 - Because of this I think my model was more inclined to go straight even when there was a turn 
 - I started for looking for solutions online
 - My approach and code is heavily inspired by https://github.com/jeremy-shannon/CarND-Behavioral-Cloning-Project
