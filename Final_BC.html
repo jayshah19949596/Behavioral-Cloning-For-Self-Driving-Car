@@ -12125,8 +12125,8 @@ div#notebook {
 <li>It is a parameter to tune</li>
 <li>For right camera images and left camera images the angel measurement is of center camera image which is wrong</li>
 <li>Corection factor helps us use the right camera images and left camers images effectively</li>
-<li>Correction factor makes the angel measurement to stir right by 0.2 for left images so that we can effectively use left images</li>
-<li>Correction factor makes the angel measurement to stir left by 0.2 for right images so that we can effectively use right images</li>
+<li>Correction factor makes the angel measurement to steer right by 0.2 for left images so that we can effectively use left images</li>
+<li>Correction factor makes the angel measurement to steer left by 0.2 for right images so that we can effectively use right images</li>
 </ul>
 
 </div>
@@ -12241,39 +12241,26 @@ div#notebook {
 <h2 id="Flatten-the-Distribution">Flatten the Distribution<a class="anchor-link" href="#Flatten-the-Distribution">&#182;</a></h2><ul>
 <li>This was a game changer for me </li>
 <li>Somehow my model even after collecting the data was not performing good</li>
-<li>The model did drive with in the track but when ever there was a turn, it did not change the stirring angle</li>
-<li>I saw the csv file and found that most of the stirring angel data is 0 degree</li>
-<li>This is because the training trach does not have much sharp turns</li>
+<li>The model did drive with in the track but when ever there was a turn, it did not change the steering angle</li>
+<li>I saw the csv file and found that most of the steering angel data is 0 degree</li>
+<li>This is because the training track does not have much sharp turns</li>
 <li>Because of this somehow I felt that the training is biased</li>
-<li>We have told the network for most of the data to keep strring angel to 0</li>
+<li>We have told the network for most of the data to keep steering angel to 0</li>
 <li>Because of this I think my model was more inclined to go straight even when there was a turn </li>
 <li>I started for looking for solutions online</li>
 <li>My approach and code for the below cell is heavily inspired by <a href="https://github.com/jeremy-shannon/CarND-Behavioral-Cloning-Project">https://github.com/jeremy-shannon/CarND-Behavioral-Cloning-Project</a></li>
 <li>I decided to throw away some of the data looking at above link's solution</li>
 <li>Calculated <strong><code>avg_samples_per_bin</code></strong> </li>
-<li>all the stirring angle data for a particular bin that had number of data &lt; <strong><code>avg_samples_per_bin</code></strong> were kept</li>
+<li>all the steering angle data for a particular bin that had number of data &lt; <strong><code>avg_samples_per_bin</code></strong> were kept</li>
 <li>The bins that had data more then <strong><code>avg_samples_per_bin</code></strong> were kept with a <strong><code>1-keep_probability</code></strong></li>
 <li>Somehow with this solution the model performed good but got confused at the bridge</li>
 <li>So no data from data_3 folder or data_4 folder was thrown away because those folder had training data for bridge</li>
 </ul>
-<h3 id="Data-Distribution-of-stirring-angles-before-Flattening-is-shown-below">Data Distribution of stirring angles before Flattening is shown below<a class="anchor-link" href="#Data-Distribution-of-stirring-angles-before-Flattening-is-shown-below">&#182;</a></h3><p><img src="./writeup_images/Before_Flattening.PNG" alt="Before_Flattening" title="Before_Flattening"></p>
-<h3 id="Data-Distribution-of-stirring-angles-after-Flattening-is-shown-below">Data Distribution of stirring angles after Flattening is shown below<a class="anchor-link" href="#Data-Distribution-of-stirring-angles-after-Flattening-is-shown-below">&#182;</a></h3><p><img src="./writeup_images/After_Flattening.PNG" alt="After_Flattening" title="After_Flattening"></p>
+<h3 id="Data-Distribution-of-steering-angles-before-Flattening-is-shown-below">Data Distribution of steering angles before Flattening is shown below<a class="anchor-link" href="#Data-Distribution-of-steering-angles-before-Flattening-is-shown-below">&#182;</a></h3><p><img src="./writeup_images/Before_Flattening.PNG" alt="Before_Flattening" title="Before_Flattening"></p>
+<h3 id="Data-Distribution-of-steering-angles-after-Flattening-is-shown-below">Data Distribution of steering angles after Flattening is shown below<a class="anchor-link" href="#Data-Distribution-of-steering-angles-after-Flattening-is-shown-below">&#182;</a></h3><p><img src="./writeup_images/After_Flattening.PNG" alt="After_Flattening" title="After_Flattening"></p>
 
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-</div>
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
